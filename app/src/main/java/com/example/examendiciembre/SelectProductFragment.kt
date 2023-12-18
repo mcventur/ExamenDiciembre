@@ -26,16 +26,32 @@ class SelectProductFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ivHamburguer.setOnClickListener{
-            val action = SelectProductFragmentDirections
-                .actionSelectProductFragmentToDetallesFragment(getString(R.string.hamburguesa))
-
-            findNavController().navigate(action)
+            navega(getString(R.string.hamburguesa))
         }
 
         binding.ivPizza.setOnClickListener{
-
+            navega(getString(R.string.pizza))
         }
+
+        binding.ivTaco.setOnClickListener{
+            navega(getString(R.string.taco))
+        }
+
+        binding.ivSalad.setOnClickListener {
+            navega(getString(R.string.ensalada))
+        }
+
+
+
     }
+
+    private fun navega(producto: String) {
+        val action = SelectProductFragmentDirections
+            .actionSelectProductFragmentToDetallesFragment(producto)
+
+        findNavController().navigate(action)
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
