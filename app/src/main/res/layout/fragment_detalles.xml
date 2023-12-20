@@ -5,19 +5,19 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetallesFragment"
-    android:padding="@dimen/layout_padding">
+    android:padding="@dimen/layout_padding"
+    tools:context=".DetallesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/detallesTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Has seleccionado Hamburguesa"
+        android:textAppearance="?attr/textAppearanceHeadline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textAppearance="?attr/textAppearanceHeadline5"/>
+        tools:text="Has seleccionado Hamburguesa" />
 
     <TextView
         android:id="@+id/tagCantidad"
@@ -40,7 +40,8 @@
             android:id="@+id/editCantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cantidad_hint" />
+            android:hint="@string/cantidad_hint"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
@@ -82,8 +83,7 @@
         android:layout_marginTop="@dimen/block_top_margin"
         android:text="@string/introduce_tu_nombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgHorario"
-        tools:text="@string/texto_hora_recogida" />
+        app:layout_constraintTop_toBottomOf="@+id/rgHorario" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutNombre"
@@ -98,6 +98,27 @@
             android:layout_height="wrap_content"
             android:hint="@string/nombre_hint" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnDetallesContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/block_top_margin"
+        android:text="@string/continuarButtonText"
+        app:layout_constraintEnd_toStartOf="@+id/btnDetallesVolver"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutNombre" />
+
+    <Button
+        android:id="@+id/btnDetallesVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/atrasButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnDetallesContinuar"
+        app:layout_constraintTop_toTopOf="@+id/btnDetallesContinuar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,7 +47,7 @@ class SelectProductFragment : Fragment() {
 
     private fun navega(producto: String) {
         val action = SelectProductFragmentDirections
-            .actionSelectProductFragmentToDetallesFragment(producto)
+            .actionSelectProductFragmentToDetallesFragment(producto = producto)
 
         findNavController().navigate(action)
     }
